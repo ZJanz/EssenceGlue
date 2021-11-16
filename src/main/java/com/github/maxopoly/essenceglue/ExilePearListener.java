@@ -17,9 +17,6 @@ public class ExilePearListener implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void pearlDecay(PearlDecayEvent event) {
-		if (!multiplyCost) {
-			return;
-		}
 		int streak = streakMan.getRecalculatedCurrentStreak(event.getPearl().getPlayerId());
 		event.setDamageAmount(event.getDamageAmount() * streak);
 	}
